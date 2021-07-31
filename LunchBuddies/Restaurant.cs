@@ -8,14 +8,15 @@ namespace LunchBuddies
 {
     class Restaurant
     {
-        private List<string> RestaurantNames { get; set; }
-        public string Name { get; set; }
+        public string Name;
+        private List<string> RestaurantNames = new List<string> { "Pink Flamingo", "The Rusty Bucket", "The Lady's Hankerchief" };
 
-        if(RestaurantNames == null) 
+        public Restaurant()
         {
-            RestaurantNames = new List<string> {"Pink Flamingo", "The Rusty Bucket", "The Lady's Hankerchief"};
-        }   
-        int index = Random.Next(RestaurantNames.Count);
+            Random randomInteger = new();
+            int r = randomInteger.Next(RestaurantNames.Count);
+            Name = RestaurantNames[r];
+        }
         
     }
 }
